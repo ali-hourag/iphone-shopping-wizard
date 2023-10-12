@@ -17,7 +17,7 @@
 
 ## About
 
-This application is a shopping wizard cloning Apple website for buying Iphone´s on different models and colours.
+This application is a shopping wizard that was done on April 2023 cloning Apple website for buying Iphone´s on different models and colours.
 
 
 ## Technologies
