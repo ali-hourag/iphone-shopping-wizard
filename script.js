@@ -527,10 +527,21 @@ function setProfile() {
   }
   const clearBtn = document.querySelector(".clear-btn");
   const nextBtn = document.querySelector(".next-btn");
+  const skipBtn = document.querySelector(".skip-btn");
   nextBtn.disabled = true;
 
   nextBtn.addEventListener("click", checkProfileValidity);
   clearBtn.addEventListener("click", clearForm);
+  skipBtn.addEventListener("click", () => {
+
+    let profileData = {};
+    profileData.username = "DearGuest"
+    profileData.email = "guest@gmail.com";
+    profileData.password = "Hola@1234";
+    data.push(profileData);
+    nextStep([".profile", "flex"], [".address", "flex"])
+
+  });
 
 }
 
@@ -936,7 +947,7 @@ function setGreeting() {
   document.body.appendChild(timeAlert);
 
   const logo = document.querySelector(".logo-container img");
-  logo.style.left = "790px";
+  logo.style.left = "calc(50vw - 210px)";
 
   setFinish(".greeting");
 }
