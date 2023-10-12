@@ -103,7 +103,6 @@ hr {
     align-self: center;
     height: 4rem;
     flex: 1;
-    /*flex-grow: 1; flex-shrink: 1; flex-basis: 0;*/
 }
 
 .logo-container img {
@@ -266,7 +265,6 @@ hr {
 /*-----------INFORMATION PRODUCT------------*/
 
 .product-info form {
-    /* 6fr/8fr = 0.75 --> this way it will always have the right height and scroll will be enabled*/
     height: 75vh;
     overflow-y: scroll;
     display: flex;
@@ -290,7 +288,6 @@ hr {
 }
 
 .product-info form fieldset {
-    /*border: none;*/
     margin-top: 4rem;
     margin-bottom: 4rem;
 }

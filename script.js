@@ -155,13 +155,13 @@ function modelClicked() {
  * This function sets the images by clicking different colors.
  */
 function setImgByColor() {
-  //Son los selectores del modelo
+  //Model selectors
   const labelModel = document.querySelectorAll(".label-model");
   const radioColor = document.querySelectorAll(".iphone-color input");
 
   let colorChecked = "";
   let colorHChecked = "";
-  //Averiguamos qué color está checked
+  //Guess which color is checked
   for (let i = 0; i < radioColor.length; i++) {
     if (radioColor[i].checked === true) {
       colorChecked = radioColor[i].getAttribute("color");
@@ -311,7 +311,7 @@ function setColor(iColorsH, iColors) {
   } else {
     colorLegend.style.visibility = "visible";
   }
-  //--------------------------
+
 
 
   let colorLabel = document.querySelectorAll(".color-election");
@@ -749,7 +749,6 @@ function checkAddressValidity() {
 }
 
 
-
 /*---------------------------------SHIPPING PAGE-------------------------------------------------- */
 /**
  * Sets shipping page out.
@@ -998,4 +997,3 @@ function time2Buy() {
   let initialSeconds = min * 60 + seconds;
   data.push(initialSeconds);
 }
-
