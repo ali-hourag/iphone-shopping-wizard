@@ -1,0 +1,972 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    box-shadow: unset;
+    border: none;
+}
+
+:root {
+    --bg-white: #F8F8FF;
+    --bg-darkgrey: #D3D3D3;
+    --bg-lightgrey: #F5F5F5;
+    --i13-blue: #206290;
+    /**/
+    --i13-pink: #f6dddf;
+    --i13-mindnight: #22263b;
+    /**/
+    --i13-starlight: #efefe8;
+    --i13-green: #033f1d;
+    /**/
+    --i13-red-: #cd1c1c;
+    /**/
+    --i14-mindnight: #22263b;
+    /**/
+    --i14-red: #f90000;
+    /**/
+    --i14-purple: #e2d7e8;
+    --i14-blue: #85a5b0;
+    /**/
+    --i14-yellow: #f1e723;
+    --i14-starlight: #efefe8;
+    --i14pro-spaceblack: #182030;
+    /**/
+    --i14pro-gol: #f3eb9f;
+    --i14pro-silver: #f1efef;
+    --i14pro-deeppurple: #51435d;
+    /**/
+    --se-mindnight: #22263b;
+    /**/
+    --se-starlight: #efefe8;
+    --se-red: #cd1c1c;
+    /**/
+    --border-blue: #0071e3;
+    --shadow-blue: deepskyblue;
+    --top-bar: deepskyblue;
+}
+
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display?styles=98774,98773,98770');
+
+@font-face {
+    font-family: "San Francisco";
+    src: url("assets/fonts/san-franciso.woff");
+}
+
+button {
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+body {
+    background-color: var(--bg-white);
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr 6fr 1fr;
+    min-height: 100vh;
+}
+
+/* -------- GENERAL STYLES ---------- */
+
+hr {
+    border: 1px solid darkgray;
+    margin: 8px 0;
+    width: 60%;
+}
+
+
+
+/*-----------HEADER----------*/
+
+.header {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(120deg,
+            var(--bg-white),
+            var(--bg-lightgrey) 5%,
+            var(--bg-darkgrey) 20% 70%,
+            var(--bg-lightgrey) 95%);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 4rem;
+    flex: 1;
+    /*flex-grow: 1; flex-shrink: 1; flex-basis: 0;*/
+}
+
+.logo-container img {
+    position: relative;
+    transition: all 3s cubic-bezier(.29, .72, .72, 1.01);
+    left: 0;
+}
+
+.iphone-selector {
+    display: none;
+    /*FLEX*/
+    justify-content: space-evenly;
+    flex: 3;
+    align-self: center;
+    margin-left: 3rem;
+}
+
+.btn-iphone-selector {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+    background-color: #c7c7c7;
+    border-radius: 15%;
+    transition: background-color 200ms ease-in;
+}
+
+.btn-iphone-selector:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+.new-model {
+    font-size: .7rem;
+    color: #B22222;
+}
+
+.progress {
+    display: none;
+    /*FLEX*/
+    flex: 3;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 1.5s ease-out;
+}
+
+/*---Toggled class to show the buttons or progress bar.---*/
+.top-display {
+    display: flex;
+}
+
+.p-round {
+    width: 20px;
+    height: 20px;
+    align-self: center;
+    border: 1px solid black;
+    border-radius: 50%;
+    transition: background-color 1.5s ease-in;
+
+}
+
+.p-bar {
+    width: 286px;
+    height: 5px;
+    align-self: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+}
+
+.bar-1,
+.bar-2,
+.bar-3 {
+    background: linear-gradient(to right, var(--top-bar) 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 1.5s ease-out;
+}
+
+
+
+
+.p-fill {
+    flex: 1;
+}
+
+/*-----------MAIN----------*/
+
+.main {
+    background-color: var(--bg-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-------------------------- MAIN - PAGE ---------------------------*/
+
+.main-page {
+    display: none;
+    grid-template-columns: 1fr 6fr 3fr;
+    min-width: 1000px;
+    max-width: 1400px;
+    height: 100%;
+}
+
+/*---------MAIN PAGE SECTION--------------------*/
+
+/*-----------SMALL IMAGES------------*/
+
+.product-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-page input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.image {
+    width: 6rem;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    border-radius: .6rem;
+    margin: 2px;
+    border: 2px solid transparent;
+    transition: background-color .1s ease-in;
+
+}
+
+.product-images input:checked+label>img {
+    border-color: var(--border-blue);
+    background-color: var(--bg-darkgrey);
+}
+
+
+
+.product-images label>img:hover {
+    cursor: pointer;
+    background-color: var(--bg-darkgrey);
+
+}
+
+/*-----------BIGGER IMAGE------------*/
+
+.bigger-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+
+}
+
+.image-big {
+    object-fit: contain;
+}
+
+/*-----------INFORMATION PRODUCT------------*/
+
+.product-info form {
+    /* 6fr/8fr = 0.75 --> this way it will always have the right height and scroll will be enabled*/
+    height: 75vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info form::-webkit-scrollbar {
+    display: none;
+}
+
+.phone-title,
+.phone-sub-title {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+
+.phone-sub-title {
+    color: #707B7C;
+}
+
+.product-info form fieldset {
+    /*border: none;*/
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.iphone-model,
+.iphone-storage {
+    padding: 1rem;
+}
+
+.product-info label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--bg-darkgrey);
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    border-radius: 12px;
+    height: 4rem;
+    padding: .5rem;
+}
+
+
+
+.iphone-model input:focus+label,
+.iphone-storage input:focus+label {
+    box-shadow: 0 0 0 4px var(--shadow-blue);
+}
+
+.iphone-model input:checked+label,
+.iphone-storage input:checked+label {
+    border-color: var(--border-blue);
+}
+
+.iphone-model label:hover,
+.iphone-storage label:hover {
+    cursor: pointer;
+    border-color: #7F8083;
+}
+
+.phone-dimension {
+    font-size: .8rem;
+}
+
+.text-phone {
+    flex: 4;
+}
+
+.text-price {
+    flex: 2;
+    white-space: nowrap;
+}
+
+.model-selected {
+    font-weight: bold;
+}
+
+.iphone-storage legend,
+.iphone-storage p {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+
+.iphone-storage p {
+    color: #707B7C;
+    padding-top: .5rem;
+}
+
+.color-legend {
+    height: 1rem;
+    text-align: center;
+}
+
+.iphone-color {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*---------------------------*/
+
+
+.product-info input:disabled+label {
+    opacity: 0.3;
+}
+
+.product-info input:disabled+label:hover {
+    border-color: var(--bg-darkgrey);
+    cursor: auto;
+}
+
+.iphone-color input:disabled+label:hover {
+    border-color: transparent;
+}
+
+.btn-buy:disabled {
+    opacity: 0.3;
+}
+
+
+/*---------------------------*/
+.iphone-color label {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background-clip: content-box;
+    padding: 4px;
+}
+
+.iphone-color label:hover {
+    border-color: var(--bg-darkgrey);
+    cursor: pointer;
+}
+
+.iphone-color input:checked+label {
+    border-color: var(--border-blue);
+    border-width: 2px;
+}
+
+
+.storage-selected {
+    flex-basis: 60%;
+}
+
+/*--------- 1. PROFILE --------------------*/
+
+.profile {
+    display: none;
+    /* FLEX */
+}
+
+.profile legend {
+    letter-spacing: 2px;
+}
+
+.form-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.username-fieldset {
+    margin-bottom: 1em;
+}
+
+
+/*---------------------------------*/
+
+.username-fieldset:before {
+    content: attr(error-username);
+    color: var(--i13-red-);
+    font-size: .8rem;
+    position: relative;
+    top: 108px;
+    left: 194px;
+}
+
+.username-fieldset:after {
+    content: attr(error-email);
+    color: var(--i13-red-);
+    position: relative;
+    font-size: .8rem;
+    left: 415px;
+    bottom: 30px;
+}
+
+.password-fieldset:after {
+    content: attr(error-password);
+    color: var(--i13-red-);
+    font-size: .8rem;
+    position: relative;
+    bottom: 4px;
+}
+
+.profile input:disabled {
+    opacity: 0.3;
+}
+
+/*---------------------------------*/
+
+
+
+
+
+.username-fieldset legend {
+    font-size: 1.3em;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #776969;
+}
+
+.username-fieldset p {
+    margin-bottom: 10px;
+}
+
+
+.username-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.username-container input {
+    padding: 1.5em;
+    width: 25%;
+    margin: 12px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--bg-darkgrey);
+}
+
+.password-fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.password-fieldset legend {
+    color: #9c9696;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.password-fieldset input {
+    padding: 1.5em;
+    width: 35%;
+    margin: 8px 0;
+    border-radius: 4px;
+    border: 1px solid var(--bg-darkgrey);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.btn-container button {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #71AAE3;
+    color: var(--bg-white);
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.next-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.btn-forms button:hover,
+.btn-address button:hover {
+    background-color: #4d8de0;
+}
+
+/* -------------- 2. ADDRESS ------------ */
+
+.address {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.address label {
+    color: #9c9696;
+    font-size: 1.6em;
+}
+
+/*For inputs*/
+.addres-input-form {
+    border: 1px solid var(--bg-darkgrey);
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    color: #9c9696;
+}
+
+.form-address {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 3fr 1fr;
+    gap: 3rem;
+    row-gap: 0;
+    padding: 30px;
+    height: 75vh;
+}
+
+.border-address {
+    border-color: red;
+}
+
+.personal-data {
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.address-data {
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-data {
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.phone-label {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.prefix-number {
+    flex: 1;
+    appearance: none;
+}
+
+.number-entered {
+    margin-left: 4px;
+    flex: 2;
+}
+
+.contact-data input,
+.select-country-form {
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.next-btn-address:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.select-country-form {
+    border: 1px solid var(--bg-darkgrey);
+    border-radius: 3px;
+    padding: 10px;
+    width: 100%;
+    color: #9c9696;
+}
+
+.address .check-address {
+    font-size: 1.3rem;
+}
+
+.btn-address {
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.btn-address button {
+    margin-top: 0;
+}
+
+
+
+/* ------------ 3. SHIPPING ----------- */
+
+.shipping {
+    display: none;
+    height: 75vh;
+}
+
+.fieldset-shipping {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.shipping input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.fieldset-shipping legend {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: #5d4b4b;
+}
+
+.shipping label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--bg-darkgrey);
+    background-color: white;
+    border-radius: 12px;
+    height: 3rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+.shipping-type {
+    margin-bottom: 4rem;
+}
+
+.shipping-type legend {
+    text-align: center;
+}
+
+.gift-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.shipping .shipping-type label span {
+    font-weight: bold;
+}
+
+.shipping input:focus+label {
+    box-shadow: 0 0 0 4px var(--shadow-blue);
+}
+
+.shipping input:checked+label {
+    border-color: var(--border-blue);
+}
+
+.shipping label:hover {
+    cursor: pointer;
+    border-color: #7F8083;
+}
+
+
+
+.shipping textarea {
+    width: 100%;
+    height: 5rem;
+    resize: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.shipping textarea:focus {
+    outline: none;
+    border-color: var(--border-blue);
+    box-shadow: 0 0 0 2px var(--shadow-blue);
+}
+
+.shipping label.selector-wrapper {
+    border-radius: 0%;
+    border-color: var(--border-blue);
+    background-color: var(--bg-lightgrey);
+}
+
+
+/*------------------- FINISH PAGE ---------------- */
+
+.finish {
+    background: linear-gradient(var(--finish-color),
+            var(--bg-white) 25%);
+    display: none;
+    grid-template-rows: 3fr 4fr 2fr;
+    grid-template-columns: 2fr 1fr;
+    min-width: 1000px;
+    max-width: 1400px;
+}
+
+.section-title {
+    text-align: center;
+    align-self: flex-start;
+    grid-column: 1/3;
+    font-size: 35px;
+    margin-top: 20px;
+}
+
+.product-purchased {
+    background-color: var(--bg-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.figure-f {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-f {
+    max-width: 200px;
+    justify-self: center;
+}
+
+.sec-aside {
+    background-color: var(--bg-white);
+    align-self: center;
+}
+
+.check {
+    grid-column: 1/3;
+    justify-self: left;
+    align-self: center;
+    padding-left: 120px;
+
+}
+
+.purchase-details {
+    background-color: var(--bg-white);
+    align-self: flex-start;
+}
+
+.finish p,
+.greeting p {
+    padding-top: 4px;
+}
+
+.purchase-details hr {
+    border-color: var(--finish-color);
+}
+
+/*------------------- THANK YOU PAGE ---------------- */
+
+.greeting {
+    background: linear-gradient(var(--finish-color),
+            var(--bg-white) 25%);
+    display: none;
+    grid-template-rows: 2fr 2fr 7fr;
+    grid-template-columns: 2fr 1fr;
+    max-width: 1400px;
+}
+
+.congrats {
+    grid-column: 1/3;
+    align-self: center;
+    margin: 10px 30px 0;
+
+}
+
+
+
+.thanks {
+    grid-column: 1/3;
+    align-self: center;
+    margin: 0 30px;
+}
+
+.purchase {
+    background-color: var(--bg-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.greeting aside {
+    background-color: var(--bg-white);
+    padding: 30px;
+    margin: 10px 30px 0;
+}
+
+.total-purchase hr {
+    border-color: var(--finish-color);
+    width: 70%;
+}
+
+/*----------FOOTER----------*/
+
+.footer {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-darkgrey);
+}
+
+.f-fill {
+    flex: 2;
+}
+
+.buy-iphone {
+    flex: 1;
+}
+
+.btn-buy {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: var(--border-blue);
+    text-align: center;
+    padding: 8px 14px;
+    border-radius: 40px;
+}
+
+.btn-buy:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.btn-buy:hover {
+    cursor: pointer;
+}
+
+/*-----------TO TOGGLE THE CLASS FOR A SECTION AND MAKE IT VISIBLE----------------*/
+.main-display-grid {
+    display: grid;
+}
+
+.main-display-flex {
+    display: flex;
+}
+
+
+/*-----------TIME ALERT STYLE----------------*/
+
+.time-alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 170px;
+    right: 60px;
+    width: 300px;
+    height: 100px;
+    background-color: rgba(32, 98, 144, 0.5);
+    border: 2px solid var(--border-blue);
+    border-radius: 5px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.time-taken {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 10px;
+    bottom: 18px;
+    left: 200px;
+    width: 700px;
+    height: 80px;
+    background-color: var(--i14-purple);
+    border: 2px solid var(--i14pro-deeppurple);
+    border-radius: 5px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}

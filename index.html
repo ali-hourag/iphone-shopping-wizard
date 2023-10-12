@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo-container"><img src="iphones/apple-logo.png" alt="apple logo"></div>
+            <!--!!MAKE IT A NAV!!-->
+            <nav class="iphone-selector">
+                <button id="i14-btn" class="btn-iphone-selector">iPhone 14 <p class="new-model">NEW</p></button>
+                <button id="i13-btn" class="btn-iphone-selector">iPhone 13</button>
+                <button class="btn-iphone-selector">iPhone SE</button>
+            </nav>
+
+            <div class="progress">
+                <div class="p-round round-1"></div>
+                <div class="p-bar bar-1"></div>
+                <div class="p-round round-2"></div>
+                <div class="p-bar bar-2"></div>
+                <div class="p-round round-3"></div>
+                <div class="p-bar bar-3"></div>
+                <div class="p-round round-4"></div>
+            </div>
+
+            <div class="p-fill"></div>
+        </header>
+
+        <main class="main">
+            <!--WE ARE GOING TO DIVIDE EACH PART OF THE CODE IN SECTIONS, WE HAVE 6 OF THEM-->
+            <!--MAIN PAGE-->
+            <section class="main-page">
+                <!--Different images-->
+                <figure class="product-images">
+
+                </figure>
+                <!--Image shown-->
+                <figure class="bigger-image">
+                    <img class="image-big">
+                </figure>
+                <!--Info product-->
+                <aside class="product-info">
+                    <form>
+                        <p class="phone-title"></p>
+                        <p class="phone-sub-title">WHICH MODEL IS FOR YOU?</p>
+                        <fieldset class="iphone-model">
+
+
+
+                        </fieldset>
+                        <fieldset class="iphone-color">
+                            <legend class="color-legend"></legend>
+
+
+                        </fieldset>
+
+                        <fieldset class="iphone-storage">
+                            <legend>STORAGE</legend>
+                            <p>How much storage do you need?</p>
+
+                        </fieldset>
+
+                    </form>
+
+                </aside>
+            </section>
+            <!--PROFILE-->
+            <section class="profile">
+                <form onsubmit="return false" class="form-profile">
+                    <fieldset class="username-fieldset">
+                        <legend class="legend-username">
+                            <p>Sólo necesitas un Apple ID para acceder a todos los servicios de Apple.</p>
+                            ¿Ya tienes un Apple ID?
+                        </legend>
+
+                        <div class="username-container">
+                            <input type="text" id="username" name="username" required placeholder="Username">
+
+                            <!-- minlength="5" maxlength="20" pattern="[^\s]+"-->
+                            <input type="email" id="email" name="email" required placeholder="Email">
+                            <!--maxlength="50"-->
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="password-fieldset">
+                        <legend>Crea una contraseña</legend>
+                        <input type="password" id="password" name="password" required placeholder="Password">
+                        <!--minlength="8" maxlength="20" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,20}$"-->
+                        <input type="password" id="confirm-password" name="confirm_password" required
+                            placeholder="Confirm Pasword">
+                        <!--minlength="8" maxlength="20" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,20}$"-->
+                    </fieldset>
+                    <div class="btn-container">
+                        <button class="clear-btn" type="reset">Clear</button>
+                        <button class="next-btn">Next</button>
+                    </div>
+                </form>
+            </section>
+            <!--ADDRESS-->
+            <section class="address">
+                <form class="form-address" onsubmit="return false">
+                    <fieldset class="personal-data">
+                        <label for="first-name">First Name:</label>
+                        <input id="first-name" type="text" class="addres-input-form" name="firt-name" required
+                            maxlength="20">
+
+                        <label for="last-name">Last Name:</label>
+                        <input id="last-name" type="text" class="addres-input-form" name="last-name" required
+                            maxlength="20">
+
+                        <label for="birth-date">Birtdate:</label>
+                        <input id="birth-date" type="date" class="addres-input-form" name="birth-date" required>
+                    </fieldset>
+
+
+                    <fieldset class="address-data">
+                        <label for="address-1">Address 1:</label>
+                        <input id="address-1" type="text" class="addres-input-form" name="address-1" required
+                            maxlength="50">
+
+                        <label for="address-2">Address 2:</label>
+                        <input id="address-2" type="text" class="addres-input-form" name="address-2" maxlength="50">
+
+
+                        <label for="postal-code">Postal code:</label>
+                        <input id="postal-code" type="text" class="addres-input-form" name="postal-code" required
+                            maxlength="5">
+                    </fieldset>
+                    <fieldset class="contact-data">
+                        <label for="country">Country:</label>
+                        <select id="country" class="select-country-form" name="country" required>
+                            <option value="">--Select a country--</option>
+                            <option value="AND">Andorra</option>
+                            <option value="ESP">España</option>
+                            <option value="FRA">Francia</option>
+                            <option value="DEU">Alemania</option>
+                            <option value="GRC">Grecia</option>
+                        </select>
+
+                        <div class="phone-container">
+                            <label class="phone-label" for="phone-country-code">Phone:</label>
+                            <select class="select-country-form prefix-number" required>
+                                <option value="376">AND-376</option>
+                                <option value="34">ESP-34</option>
+                                <option value="33">FRA-33</option>
+                                <option value="49">DEU-49</option>
+                                <option value="30">GRC-30</option>
+                            </select>
+
+                            <input id="phone-country-code" type="tel" class="addres-input-form number-entered"
+                                name="Phone" required maxlength="9" pattern="[0-9]{1,9}"
+                                placeholder="Your phone number">
+                        </div>
+                        <div class="check-address-container">
+                            <input type="checkbox" id="regular-address" name="regular-address">
+                            <label class="check-address" for="regular-address">This is my regular address.</label>
+
+                        </div>
+                    </fieldset>
+
+
+                    <div class="btn-container btn-address">
+                        <button type="reset">Clear</button>
+                        <button id="next-btn-address" class="next-btn-address">Next</button>
+                    </div>
+                </form>
+            </section>
+            <!--SHIPPING-->
+            <section class="shipping">
+                <form class="fieldset-shipping">
+                    <fieldset class="shipping-type">
+                        <legend>Shipping type</legend>
+
+                        <input id="free-shipping" type="radio" name="shipment-type" value="free">
+                        <label for="free-shipping">Free shipment (72h)<span></span></label>
+
+
+                        <input id="premium-shipping" type="radio" name="shipment-type" value="premium">
+                        <label for="premium-shipping">Extra shipping (48h) - <span> $5</span></label>
+
+
+                        <input id="extra-shipping" type="radio" name="shipment-type" value="extra">
+                        <label for="extra-shipping">Premium shipping (24h) - <span> $10</span></label>
+                    </fieldset>
+                    <fieldset class="gift-container">
+                        <input id="gift" type="checkbox" name="gift" value="gift">
+                        <label for="gift">Is it a gift?</label>
+
+                        <textarea name="gift-message" placeholder="Gift message"></textarea>
+                        <label for="gift-image" class="selector-wrapper">Select wrapper image:</label>
+                        <input id="gift-image" type="file" name="gift-image">
+                    </fieldset>
+
+                </form>
+            </section>
+            <!--FINISH-->
+            <section class="finish">
+
+                <h2 class="section-title">Your Purchase</h2>
+                <section class="product-purchased"> <!--Era section1-->
+                    <figure class="figure-f">
+                        <img class="img-f" src="">
+                    </figure>
+                    <aside class="sec-aside">
+                        <h3></h3>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </aside>
+                </section>
+
+                <aside class="purchase-details lastAside"> <!--Era main-aside5-->
+                    <h4>Order details</h4>
+                    <hr>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <hr>
+                    <p></p>
+                </aside>
+
+                <label for="terms" class="check">
+                    <input id="terms" class="terms-check" type="checkbox">
+                    I have read and accept the Terms and Conditions.
+                </label>
+
+            </section>
+            <!--THANK YOU PAGE-->
+            <section class="greeting">
+                <h2 class="congrats">Congratulations! Your order is ready!</h2>
+                <h3 class="thanks">Thank you for your trust!</h3>
+                <section class="purchase">
+                    <!--<h2 class="section-title">Your Purchase</h2>-->
+                    <figure class="figure-f">
+                        <img class="img-f" src="">
+                    </figure>
+                    <aside class="sec-aside">
+                        <h3></h3>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </aside>
+                </section>
+
+                <aside class="total-purchase lastAside">
+                    <h4>Order details</h4>
+                    <hr>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <hr>
+                    <p></p>
+                </aside>
+            </section>
+
+        </main>
+        <footer class="footer">
+            <div class="f-fill"></div>
+            <div class="buy-iphone">
+                <button class="btn-buy">Buy</button>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
