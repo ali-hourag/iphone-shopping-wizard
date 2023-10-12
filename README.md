@@ -29,6 +29,6 @@ This application is a shopping wizard cloning Apple website for buying Iphone´s
 ## Setup
 If you want run it directly from code do it trough Live Server or similar.
 <br/>
-Otherwise, open it by clicking <a href="https://iphone-shopping-wizard.vercel.app/" target="_blank">here<a/>.
+Otherwise, open it by clicking <a href="https://iphone-shopping-wizard.vercel.app/" target="_blank" rel="noopener">here<a/>.
 
 ## Get Apple and enjoy! 📱
